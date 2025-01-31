@@ -1,18 +1,18 @@
 # Leaf Detection using YOLOv5
 
-This project focuses on detecting leaves using a custom-trained YOLOv5 model. The tutorial walks through dataset preparation, model training, and evaluation.
+This project focuses on detecting leaves using a custom-trained YOLOv5 model. The tutorial guides through dataset preparation, model training, and evaluation.
 
 ## Steps Covered
-1. **Gather a dataset**: Collect images and label them with bounding boxes.
-2. **Convert dataset to YOLOv5 format**: Use Roboflow or manual annotation tools.
-3. **Train YOLOv5 on the dataset**: Perform custom training.
-4. **Evaluate model performance**: Analyze results.
-5. **Run inference**: Detect leaves in new images.
+1. **Dataset Collection**: Gather and annotate images.
+2. **Dataset Formatting**: Convert to YOLOv5 format.
+3. **Model Training**: Train YOLOv5 on the dataset.
+4. **Model Evaluation**: Assess performance.
+5. **Inference**: Detect leaves in test images.
 
 ---
 
-## Installation Requirements
-Ensure you have the required dependencies installed:
+## Installation
+Ensure dependencies are installed:
 ```sh
 pip install torch torchvision torchaudio
 pip install ultralytics
@@ -29,21 +29,22 @@ pip install -r requirements.txt
 ---
 
 ## Dataset Preparation
-- Use **Roboflow** to label and export images in YOLOv5 format.
-- Place the dataset inside the `datasets/` folder with `train`, `valid`, and `test` directories.
+- Annotate images using **Roboflow** or LabelImg.
+- Export dataset in YOLOv5 format.
+- Organize into `train`, `valid`, and `test` directories.
 
 ---
 
 ## Training the Model
-Run the following command to train the model:
+Run the following command:
 ```sh
-python train.py --img 640 --batch 16 --epochs 50 --data dataset.yaml --weights yolov5s.pt
+python train.py --img 640 --batch 16 --epochs 70 --data dataset.yaml --weights yolov5s.pt
 ```
 
 ---
 
 ## Running Inference
-Once trained, test the model with:
+Test the model with:
 ```sh
 python detect.py --weights runs/train/exp/weights/best.pt --source test_images/
 ```
@@ -51,13 +52,14 @@ python detect.py --weights runs/train/exp/weights/best.pt --source test_images/
 ---
 
 ## Results & Evaluation
-- Precision, Recall, and mAP metrics will be displayed after training.
-- Visualize detections using `detect.py`.
+- View Precision, Recall, and mAP scores.
+- Use `detect.py` to visualize detections.
 
 ---
 
 ## References
 - [YOLOv5 GitHub](https://github.com/ultralytics/yolov5)
-- [Roboflow for Dataset Processing](https://roboflow.com/)
+- [Roboflow](https://roboflow.com/) for dataset processing.
 
 ---
+
